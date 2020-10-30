@@ -1,0 +1,204 @@
+.hero {
+  height: 100vh;
+  min-height: 850px;
+  background: url("../img/hero-bg.jpg") center/cover no-repeat;
+  overflow: hidden;
+
+  @include breakpoint($medium) {
+    height: auto;
+    min-height: 0;
+    padding-bottom: 65px;
+  }
+
+  @include breakpoint($small) {
+    text-align: center;
+  }
+
+  &-header {
+    background-color: $header-bg;
+    margin-bottom: 146px;
+    opacity: 0.9;
+
+    @include breakpoint($medium) {
+      margin-bottom: 50px;
+    }
+
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 100px;
+
+      @include breakpoint($small) {
+        flex-wrap: wrap;
+        padding: 20px 20px 5px;
+      }
+    }
+
+    &__logo {
+      @include breakpoint($small) {
+        margin: 0 auto;
+        margin-bottom: 25px;
+      }
+    }
+
+    &__link {
+      color: $white;
+      font-size: 28px;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      & span {
+        color: $main;
+      }
+
+      @include breakpoint($small) {
+        font-size: 25px;
+      }
+    }
+  }
+
+  &-nav {
+    &__list {
+      display: flex;
+
+      @include breakpoint($medium) {
+        flex-wrap: wrap;
+      }
+    }
+
+    @include breakpoint($medium) {
+      margin: 0 auto;
+    }
+
+    &__item {
+      letter-spacing: 0.33px;
+      margin-right: 58px;
+      text-transform: uppercase;
+
+      &:last-child {
+        margin-right: 0;
+
+        @include breakpoint($medium) {
+          margin-right: 15px;
+        }
+      }
+
+      @include breakpoint($small) {
+        margin: 0 10px 15px 10px;
+      }
+    }
+
+    &__link {
+      color: $white;
+      font-size: 13px;
+
+      &:hover {
+        color: $main;
+      }
+    }
+  }
+
+  &-content {
+    &__wrapper {
+      max-width: 733px;
+
+      @include breakpoint($small) {
+        margin: 0 auto;
+      }
+    }
+
+    &__title {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 74px;
+      text-transform: uppercase;
+
+      @include breakpoint($large) {
+        font-size: 40px;
+        margin-bottom: 50px;
+      }
+
+      @include breakpoint($medium) {
+        font-size: 35px;
+        margin-bottom: 30px;
+      }
+
+      @include breakpoint($small) {
+        font-size: 25px;
+      }
+
+      span {
+        color: $main;
+        display: inline-block;
+      }
+    }
+
+    &__subtitle {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 24px;
+
+      @include breakpoint($small) {
+        font-size: 18px;
+        margin-bottom: 18px;
+      }
+    }
+
+    &__list {
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: 77px;
+
+      @include breakpoint($large) {
+        margin-bottom: 60px;
+      }
+
+      @include breakpoint($medium) {
+        font-size: 18px;
+        margin-bottom: 40px;
+      }
+
+      @include breakpoint($small) {
+        font-size: 16px;
+      }
+    }
+
+    &__item {
+      margin-bottom: 20px;
+    }
+
+    &__button {
+      background-color: $white;
+      border-radius: 4px;
+      border: 1px solid $border;
+      color: $text;
+      font-size: 13px;
+      letter-spacing: 0.33px;
+      margin-right: 27px;
+      padding: 17px 50px 13px;
+      text-transform: uppercase;
+      max-width: 190px;
+
+      @include breakpoint($xsmall) {
+        display: block;
+        margin: 0 auto 25px;
+      }
+
+      &:last-child {
+        margin-right: 0;
+
+        @include breakpoint($xsmall) {
+          margin-right: auto;
+          margin-bottom: 0;
+        }
+      }
+
+      &:hover {
+        background-color: $main;
+        border-color: $white;
+        color: $white;
+      }
+    }
+  }
+}

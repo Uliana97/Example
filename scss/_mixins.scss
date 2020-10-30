@@ -1,0 +1,41 @@
+@mixin scrollbars(
+  $size,
+	$foregroundColor,
+	$borderRadius,
+	$backgroundColor: mix($foregroundColor, white, 50%)
+	
+) { 
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    width: #{$size};
+    height: #{$size};
+	}
+	
+	&::-webkit-scrollbar-track {
+		background: #{$backgroundColor};
+  }
+
+  &::-webkit-scrollbar-thumb {
+		background: #{$foregroundColor};
+		border-radius: #{$borderRadius};
+  }
+
+  // For Internet Explorer
+  & {
+    scrollbar-face-color: #{$foregroundColor};  
+    scrollbar-track-color: #{$backgroundColor};
+  }
+}
+
+@mixin breakpoint($querystring) {
+  $valid : true;
+  @if type-of($querystring) != "string" {
+    @warn "querystring: #{$querystring} is not a string";
+    $valid : false;
+  }
+  @if $valid == true {
+    @media #{$querystring} {
+      @content;
+    }
+  }
+}
